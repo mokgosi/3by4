@@ -25,9 +25,9 @@ class Country
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=3, nullable=true)
+     * @ORM\Column(type="string",  name="iso_code", length=3, nullable=true)
      */
-    private $iso_code;
+    private $isoCode;
 
     /**
      * @ORM\OneToMany(targetEntity=Patient::class, mappedBy="country")
@@ -58,12 +58,12 @@ class Country
 
     public function getIsoCode(): ?string
     {
-        return $this->iso_code;
+        return $this->isoCode;
     }
 
-    public function setIsoCode(?string $iso_code): self
+    public function setIsoCode(?string $isoCode): self
     {
-        $this->iso_code = $iso_code;
+        $this->isoCode = $isoCode;
 
         return $this;
     }

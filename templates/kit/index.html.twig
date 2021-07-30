@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kit index{% endblock %}
+
+{% block body %}
+    <h1>Kit index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kit in kits %}
+            <tr>
+                <td>{{ kit.id }}</td>
+                <td>{{ kit.name }}</td>
+                <td>{{ kit.description }}</td>
+                <td>{{ kit.price }}</td>
+                <td>
+                    <a href="{{ path('kit_show', {'id': kit.id}) }}">show</a>
+                    <a href="{{ path('kit_edit', {'id': kit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('kit_new') }}">Create new</a>
+{% endblock %}

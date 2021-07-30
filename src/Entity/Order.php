@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
  * @ORM\Table(name="`order`")
+ * @ORM\HasLifecycleCallbacks
  */
 class Order
 {
@@ -36,14 +37,14 @@ class Order
     private $paid;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime", name="created_at")
      */
-    private $created_at;
+    private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime", name="updated_at")
      */
-    private $updated_at;
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -86,26 +87,33 @@ class Order
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTime
     {
-        return $this->created_at;
+        return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
+    public function setCreatedAt(\DateTime $createdAt): self
     {
-        $this->created_at = $created_at;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue(): void
     {
-        return $this->updated_at;
+        $this->createdAt = new \DateTime();
     }
 
-    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
+    public function getUpdatedAt(): ?\DateTime
     {
-        $this->updated_at = $updated_at;
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTime $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

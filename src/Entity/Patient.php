@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=PatientRepository::class)
+ * @ORM\HasLifecycleCallbacks
  */
 class Patient
 {
@@ -22,7 +23,7 @@ class Patient
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $fistName;
+    private $firstName;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -40,14 +41,14 @@ class Patient
     private $country;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime_immutable", name="create_at")
      */
-    private $created_at;
+    private \DateTimeImmutable $createdAt;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime_immutable", name="updatedAt")
      */
-    private $updated_at;
+    private \DateTimeImmutable $updatedAt;
 
     /**
      * @ORM\OneToMany(targetEntity=Order::class, mappedBy="patient")
@@ -64,14 +65,14 @@ class Patient
         return $this->id;
     }
 
-    public function getFistName(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->fistName;
+        return $this->firstName;
     }
 
-    public function setFistName(string $fistName): self
+    public function setFirstName(string $firstName): self
     {
-        $this->fistName = $fistName;
+        $this->firstName = $firstName;
 
         return $this;
     }
@@ -117,21 +118,21 @@ class Patient
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
-        $this->created_at = $created_at;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
-        return $this->updated_at;
+        return $this->updatedAt;
     }
 
-    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
-        $this->updated_at = $updated_at;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

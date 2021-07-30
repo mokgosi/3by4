@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order index{% endblock %}
+
+{% block body %}
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        {% for order in orders %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{ order.kit.name }}</h5>
+                            <!-- Product price-->
+                            ${{ order.kit.price }}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto" href="{{ path('order_show', {'id': order.id}) }}">View order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+
+        {% endfor %}
+    </div>
+
+
+
+{#    <table class="table">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Id</th>#}
+{#                <th>Paid</th>#}
+{#                <th>Created_at</th>#}
+{#                <th>Updated_at</th>#}
+{#                <th>actions</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for order in orders %}#}
+{#            <tr>#}
+{#                <td>{{ order.id }}</td>#}
+{#                <td>{{ order.paid ? 'Yes' : 'No' }}</td>#}
+{#                <td>{{ order.createdAt ? order.createdAt|date('Y-m-d H:i:s') : '' }}</td>#}
+{#                <td>{{ order.updatedAt ? order.updatedAt|date('Y-m-d H:i:s') : '' }}</td>#}
+{#                <td>#}
+{#                    <a href="{{ path('order_show', {'id': order.id}) }}">show</a>#}
+{#                    <a href="{{ path('order_edit', {'id': order.id}) }}">edit</a>#}
+{#                </td>#}
+{#            </tr>#}
+{#        {% else %}#}
+{#            <tr>#}
+{#                <td colspan="5">no records found</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+
+    <a href="{{ path('order_new') }}">Create new</a>
+{% endblock %}
