@@ -30,9 +30,9 @@ class Country
     private $isoCode;
 
     /**
-     * @ORM\OneToMany(targetEntity=Patient::class, mappedBy="country")
+     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="country")
      */
-    private $patients;
+    private $orders;
 
     public function __construct()
     {
@@ -44,11 +44,18 @@ class Country
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     * @return $this
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -56,11 +63,18 @@ class Country
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getIsoCode(): ?string
     {
         return $this->isoCode;
     }
 
+    /**
+     * @param string|null $isoCode
+     * @return $this
+     */
     public function setIsoCode(?string $isoCode): self
     {
         $this->isoCode = $isoCode;
@@ -71,30 +85,19 @@ class Country
     /**
      * @return Collection|Patient[]
      */
-    public function getPatients(): Collection
+    public function getOrders(): Collection
     {
-        return $this->patients;
+        return $this->orderss;
     }
 
-    public function addPatient(Patient $patient): self
+    public function addOrder(Order $order): self
     {
-        if (!$this->patients->contains($patient)) {
-            $this->patients[] = $patient;
-            $patient->setCountry($this);
+        if (!$this->orders->contains($order)) {
+            $this->orders[] = $order;
+            $order->setCountry($this);
         }
 
         return $this;
     }
 
-    public function removePatient(Patient $patient): self
-    {
-        if ($this->patients->removeElement($patient)) {
-            // set the owning side to null (unless already changed)
-            if ($patient->getCountry() === $this) {
-                $patient->setCountry(null);
-            }
-        }
-
-        return $this;
-    }
 }

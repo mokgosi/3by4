@@ -17,7 +17,12 @@ class Order
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="orders")
+     */
+    private $country;
 
     /**
      * @ORM\ManyToOne(targetEntity=Kit::class, inversedBy="orders")
@@ -34,7 +39,7 @@ class Order
     /**
      * @ORM\Column(type="boolean")
      */
-    private $paid;
+    private bool $paid;
 
     /**
      * @ORM\Column(type="datetime", name="created_at")
@@ -51,11 +56,37 @@ class Order
         return $this->id;
     }
 
+    /**
+     * @return Country|null
+     */
+    public function getCountry(): ?Country
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country|null $country
+     * @return $this
+     */
+    public function setCountry(?Country $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * @return Kit|null
+     */
     public function getKit(): ?Kit
     {
         return $this->kit;
     }
 
+    /**
+     * @param Kit|null $kit
+     * @return $this
+     */
     public function setKit(?Kit $kit): self
     {
         $this->kit = $kit;
@@ -63,11 +94,18 @@ class Order
         return $this;
     }
 
+    /**
+     * @return Patient|null
+     */
     public function getPatient(): ?Patient
     {
         return $this->patient;
     }
 
+    /**
+     * @param Patient|null $patient
+     * @return $this
+     */
     public function setPatient(?Patient $patient): self
     {
         $this->patient = $patient;
@@ -75,11 +113,18 @@ class Order
         return $this;
     }
 
+    /**
+     * @return bool|null
+     */
     public function getPaid(): ?bool
     {
         return $this->paid;
     }
 
+    /**
+     * @param bool $paid
+     * @return $this
+     */
     public function setPaid(bool $paid): self
     {
         $this->paid = $paid;
@@ -87,17 +132,25 @@ class Order
         return $this;
     }
 
+    /**
+     * @return \DateTime|null
+     */
     public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
     }
 
+    /**
+     * @param \DateTime $createdAt
+     * @return $this
+     */
     public function setCreatedAt(\DateTime $createdAt): self
     {
         $this->createdAt = $createdAt;
 
         return $this;
     }
+
     /**
      * @ORM\PrePersist
      */
@@ -117,4 +170,5 @@ class Order
 
         return $this;
     }
+
 }

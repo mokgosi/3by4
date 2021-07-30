@@ -19,9 +19,10 @@ class OrderFixtures extends Fixture implements DependentFixtureInterface
         // create 20 orders!
         for ($i = 0; $i < 10; $i++) {
             $order = new Order();
-            $order->setPaid(true);
+            $order->setCountry($this->getReference(OrderFixtures::ORDER_REFERENCE));
             $order->setKit($this->getReference(KitFixtures::KIT_REFERENCE));
             $order->setPatient($this->getReference(PatientFixtures::PATIENT_REFERENCE));
+            $order->setPaid(true);
             $order->setCreatedAt(new \DateTime());
             $order->setUpdatedAt(new \DateTime());
             $manager->persist($order);

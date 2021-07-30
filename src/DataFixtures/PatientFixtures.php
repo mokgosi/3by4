@@ -19,7 +19,6 @@ class PatientFixtures extends Fixture implements DependentFixtureInterface
         $patient->setEmail('john.doe@email.com');
         $patient->setCreatedAt(new \DateTimeImmutable());
         $patient->setUpdatedAt(new \DateTimeImmutable());
-        $patient->setCountry($this->getReference(CountryFixtures::COUNTRY_REFERENCE));
         $manager->persist($patient);
         $manager->flush();
 

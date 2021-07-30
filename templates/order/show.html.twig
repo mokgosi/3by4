@@ -16,6 +16,10 @@
                 <td>{{ order.patient.firstName }} {{ order.patient.lastName }}</td>
             </tr>
             <tr>
+                <th>Email</th>
+                <td>{{ order.patient.email }}</td>
+            </tr>
+            <tr>
                 <th>Price</th>
                 <td>{{ order.kit.price }}</td>
             </tr>
@@ -32,7 +36,6 @@
 
     <a href="{{ path('order_index') }}" class="btn btn-outline-dark mt-auto">back to list</a>
 
-    <a href="{{ path('order_edit', {'id': order.id}) }}" class="btn btn-secondary mt-auto">Edit</a>
-
-    {{ include('order/_delete_form.html.twig') }}
+{#    <a href="{{ path('order_edit', {'id': order.id}) }}" class="btn btn-secondary mt-auto">Edit</a>#}
+{#    {{ include('order/_delete_form.html.twig') }}#}
 {% endblock %}

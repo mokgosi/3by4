@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Order;
+use App\Form\PatientType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,11 +14,14 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('paid')
-            ->add('created_at')
-            ->add('updated_at')
-            ->add('kit')
-            ->add('patient')
+//            ->add('kit')
+            ->add('patient', PatientType::class)
+            ->add('paid', CheckboxType::class,[
+                'label' => 'Paid',
+                'attr' => [
+                    'class' => 'form-check-input'
+                ]
+            ])
         ;
     }
 
