@@ -3,8 +3,6 @@
     {{ form_row(form.patient.lastName) }}
     {{ form_row(form.patient.email) }}
 
-    {{ form_row(form.patient.country) }}
-
     {{ form_row(form.paid) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn ">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

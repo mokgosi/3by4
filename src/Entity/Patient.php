@@ -41,7 +41,7 @@ class Patient
     private \DateTime $createdAt;
 
     /**
-     * @ORM\Column(type="datetime_immutable", name="updatedAt")
+     * @ORM\Column(type="datetime", name="updatedAt")
      */
     private \DateTime $updatedAt;
 
@@ -123,7 +123,7 @@ class Patient
     /**
      * @return \DateTimeImmutable|null
      */
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->created_at;
     }

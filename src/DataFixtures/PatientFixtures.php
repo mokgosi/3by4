@@ -17,8 +17,8 @@ class PatientFixtures extends Fixture implements DependentFixtureInterface
         $patient->setFirstName('John');
         $patient->setLastName('Doe');
         $patient->setEmail('john.doe@email.com');
-        $patient->setCreatedAt(new \DateTimeImmutable());
-        $patient->setUpdatedAt(new \DateTimeImmutable());
+        $patient->setCreatedAt(new \DateTime());
+        $patient->setUpdatedAt(new \DateTime());
         $manager->persist($patient);
         $manager->flush();
 

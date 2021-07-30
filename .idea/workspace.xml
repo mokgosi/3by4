@@ -3,19 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="aa3583e5-4357-41ed-8bff-21fa3ef731f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/OrderFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/OrderFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/PatientFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/PatientFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Country.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Kit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Kit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Patient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Patient.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/OrderType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OrderType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PatientType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PatientType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/order/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/edit.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +194,7 @@
       <workItem from="1627582503233" duration="16674000" />
       <workItem from="1627601580625" duration="11506000" />
       <workItem from="1627631774844" duration="1853000" />
-      <workItem from="1627638812597" duration="7560000" />
+      <workItem from="1627638812597" duration="10722000" />
     </task>
     <servers />
   </component>

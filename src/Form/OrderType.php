@@ -17,7 +17,7 @@ class OrderType extends AbstractType
 //            ->add('kit')
             ->add('patient', PatientType::class)
             ->add('paid', CheckboxType::class,[
-                'label' => 'Paid',
+                'label' => 'Paid ',
                 'attr' => [
                     'class' => 'form-check-input'
                 ]
