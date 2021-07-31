@@ -22,19 +22,19 @@ class Order
     /**
      * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="orders")
      */
-    private $country;
+    private object $country;
 
     /**
      * @ORM\ManyToOne(targetEntity=Kit::class, inversedBy="orders")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $kit;
+    private object $kit;
 
     /**
      * @ORM\ManyToOne(targetEntity=Patient::class, inversedBy="orders")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $patient;
+    private object $patient;
 
     /**
      * @ORM\Column(type="boolean")
@@ -44,12 +44,12 @@ class Order
     /**
      * @ORM\Column(type="datetime", name="created_at")
      */
-    private $createdAt;
+    private datetime $createdAt;
 
     /**
      * @ORM\Column(type="datetime", name="updated_at")
      */
-    private $updatedAt;
+    private datetime $updatedAt;
 
     public function getId(): ?int
     {
@@ -159,11 +159,27 @@ class Order
         $this->createdAt = new \DateTime();
     }
 
+    /**
+     * @ORM\PrePersist
+     * @ORM\PostPersist
+     */
+    public function setUpdatedAtValue(): void
+    {
+        $this->updatedAt = new \DateTime();
+    }
+
+    /**
+     * @return \DateTime|null
+     */
     public function getUpdatedAt(): ?\DateTime
     {
         return $this->updatedAt;
     }
 
+    /**
+     * @param \DateTime $updatedAt
+     * @return $this
+     */
     public function setUpdatedAt(\DateTime $updatedAt): self
     {
         $this->updatedAt = $updatedAt;

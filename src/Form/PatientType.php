@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Dto\PatientDTO;
 use App\Entity\Patient;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -35,7 +36,7 @@ class PatientType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Patient::class,
+            'data_class' => PatientDTO::class,
         ]);
     }
 }

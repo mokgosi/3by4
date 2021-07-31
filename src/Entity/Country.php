@@ -17,17 +17,17 @@ class Country
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private string $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="string",  name="iso_code", length=3, nullable=true)
      */
-    private $isoCode;
+    private string $isoCode;
 
     /**
      * @ORM\OneToMany(targetEntity=Order::class, mappedBy="country")
@@ -83,13 +83,17 @@ class Country
     }
 
     /**
-     * @return Collection|Patient[]
+     * @return Collection|Order[]
      */
     public function getOrders(): Collection
     {
-        return $this->orderss;
+        return $this->orders;
     }
 
+    /**
+     * @param Order $order
+     * @return $this
+     */
     public function addOrder(Order $order): self
     {
         if (!$this->orders->contains($order)) {
@@ -98,6 +102,13 @@ class Country
         }
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(){
+        return $this->name;
     }
 
 }

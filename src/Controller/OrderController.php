@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Order;
+use App\Entity\Patient;
+use App\Entity\Dto\PatientDTO;
+use App\Entity\Dto\OrderDTO;
 use App\Form\OrderType;
 use App\Repository\OrderRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,12 +27,21 @@ class OrderController extends AbstractController
     #[Route('/new', name: 'order_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
     {
-        $order = new Order();
+        $order = new OrderDTO();
         $form = $this->createForm(OrderType::class, $order);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $entityManager = $this->getDoctrine()->getManager();
+
+            $patient = new PatientDTO();
+            $patient->setFirstName($order->getPatient()->getFirstName());
+            $patient->setLastName($order->getPatient()->getLastName());
+            $patient->setEmail($order->getPatient()->getEmail());
+            $entityManager->persist($patient);
+
+            $order->setPatient($patient);
             $entityManager->persist($order);
             $entityManager->flush();
 

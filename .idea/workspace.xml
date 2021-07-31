@@ -2,13 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa3583e5-4357-41ed-8bff-21fa3ef731f0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Entity/Dto/OrderDTO.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Dto/PatientDTO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/3by4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/3by4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/OrderFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/OrderFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/PatientFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/PatientFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210729080322.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210729231547.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210729235712.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210730020520.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210730174229.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210730180106.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Kit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Kit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Patient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Patient.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/OrderType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OrderType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/PatientType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PatientType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/order/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +176,7 @@
       <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1vxsw0BRYZlixGnPxjyzC35Kuzk" />
@@ -168,6 +189,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/country" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -194,7 +216,10 @@
       <workItem from="1627582503233" duration="16674000" />
       <workItem from="1627601580625" duration="11506000" />
       <workItem from="1627631774844" duration="1853000" />
-      <workItem from="1627638812597" duration="10722000" />
+      <workItem from="1627638812597" duration="12189000" />
+      <workItem from="1627682585596" duration="29238000" />
+      <workItem from="1627714733869" duration="802000" />
+      <workItem from="1627716998092" duration="5773000" />
     </task>
     <servers />
   </component>

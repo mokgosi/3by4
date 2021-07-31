@@ -18,22 +18,22 @@ class Patient
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $firstName;
+    private string $firstName;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $lastName;
+    private string $lastName;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, unique=true)
      */
-    private $email;
+    private string $email;
 
     /**
      * @ORM\Column(type="datetime", name="create_at")
@@ -41,7 +41,7 @@ class Patient
     private \DateTime $createdAt;
 
     /**
-     * @ORM\Column(type="datetime", name="updatedAt")
+     * @ORM\Column(type="datetime", name="updated_at")
      */
     private \DateTime $updatedAt;
 
@@ -121,11 +121,19 @@ class Patient
     }
 
     /**
-     * @return \DateTimeImmutable|null
+     * @return \DateTime|null
      */
     public function getCreatedAt(): ?\DateTime
     {
-        return $this->created_at;
+        return $this->createdAt;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedValue(): void
+    {
+        $this->createdAt = new \DateTime();
     }
 
     /**
@@ -147,10 +155,18 @@ class Patient
         return $this->updatedAt;
     }
 
+    /**
+     * @ORM\PrePersist
+     * @ORM\PostPersist
+     */
+    public function setUpdatedValue(): void
+    {
+        $this->updatedAt = new \DateTime();
+    }
+
     public function setUpdatedAt(\DateTime $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
-
         return $this;
     }
 
