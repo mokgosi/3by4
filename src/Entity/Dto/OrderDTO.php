@@ -2,20 +2,21 @@
 
 namespace App\Entity\Dto;
 
+use App\Entity\Order;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\GroupSequenceProviderInterface;
 
 class OrderDTO implements GroupSequenceProviderInterface
 {
     /**
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Country is required.")
      * @Assert\Type(type="App\Entity\Country")
      * @Assert\Valid
      */
     public object $country;
 
     /**
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Kit is required.")
      * @Assert\Type(type="App\Entity\Kit")
      * @Assert\Valid
      */
@@ -29,6 +30,11 @@ class OrderDTO implements GroupSequenceProviderInterface
     public object $patient;
 
     public bool $paid;
+
+    public function __construct()
+    {
+
+    }
 
     /**
      * @return array

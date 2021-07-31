@@ -39,6 +39,11 @@ class Kit
      */
     private $orders;
 
+    /**
+     * @ORM\OneToMany(targetEntity=CountryKit::class, mappedBy="kit")
+     */
+    private $countryKits;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
@@ -117,19 +122,19 @@ class Kit
         return $this->orders;
     }
 
-    /**
-     * @param Order $order
-     * @return $this
-     */
-    public function addOrder(Order $order): self
-    {
-        if (!$this->orders->contains($order)) {
-            $this->orders[] = $order;
-            $order->setKit($this);
-        }
-
-        return $this;
-    }
+//    /**
+//     * @param Order $order
+//     * @return $this
+//     */
+//    public function addOrder(Order $order): self
+//    {
+//        if (!$this->orders->contains($order)) {
+//            $this->orders[] = $order;
+//            $order->setKit($this);
+//        }
+//
+//        return $this;
+//    }
 
     /**
      * @return string

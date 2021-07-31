@@ -33,7 +33,6 @@ class PatientDTO implements GroupSequenceProviderInterface
 
     /**
      * @Assert\NotBlank(message="Email is required.")
-     * @Assert\Unique
      * @Assert\Email(
      *     message = "This value is not a valid email address.",
      *     mode = "strict"

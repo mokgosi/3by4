@@ -30,9 +30,19 @@ class Country
     private string $isoCode;
 
     /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private string $currency;
+
+    /**
      * @ORM\OneToMany(targetEntity=Order::class, mappedBy="country")
      */
     private $orders;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CountryKit::class, mappedBy="country")
+     */
+    private $kits;
 
     public function __construct()
     {
@@ -83,26 +93,45 @@ class Country
     }
 
     /**
+     * @return string
+     */
+    public function getCurrency(): string
+    {
+        return $this->currency;
+    }
+
+    /**
+     * @param string $currency
+     * @return $this
+     */
+    public function setCurrency(string $currency): self
+    {
+        $this->currency = $currency;
+
+        return $this;
+    }
+
+    /**
      * @return Collection|Order[]
      */
     public function getOrders(): Collection
     {
         return $this->orders;
     }
-
-    /**
-     * @param Order $order
-     * @return $this
-     */
-    public function addOrder(Order $order): self
-    {
-        if (!$this->orders->contains($order)) {
-            $this->orders[] = $order;
-            $order->setCountry($this);
-        }
-
-        return $this;
-    }
+//
+//    /**
+//     * @param Order $order
+//     * @return $this
+//     */
+//    public function addOrder(Order $order): self
+//    {
+//        if (!$this->orders->contains($order)) {
+//            $this->orders[] = $order;
+//            $order->setCountry($this);
+//        }
+//
+//        return $this;
+//    }
 
     /**
      * @return string

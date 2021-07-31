@@ -20,28 +20,15 @@ class OrderType extends AbstractType
         $builder
             ->add('country', EntityType::class, [
                 'class' => Country::class,
-                'attr' => [
-                    'class' => 'form-control'
-                ]
+                'placeholder' => ''
             ])
             ->add('kit', EntityType::class,[
                 'class' => Kit::class,
-                'attr' => [
-                    'class' => 'form-control'
-                ]
+                'placeholder' => ''
             ])
             ->add('patient', PatientType::class)
-            ->add('paid', CheckboxType::class,[
-                'label' => 'Paid',
-                'attr' => [
-                    'class' => 'form-check-input'
-                ]
-            ])
-            ->add('save', SubmitType::class, [
-                'attr' => [
-                    'class' => 'btn btn-outline-primary mt-auto mb-3',
-                ],
-            ])
+            ->add('paid', CheckboxType::class,[])
+            ->add('save', SubmitType::class, [])
         ;
     }
 

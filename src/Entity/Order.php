@@ -44,12 +44,12 @@ class Order
     /**
      * @ORM\Column(type="datetime", name="created_at")
      */
-    private datetime $createdAt;
+    private \DateTime $createdAt;
 
     /**
      * @ORM\Column(type="datetime", name="updated_at")
      */
-    private datetime $updatedAt;
+    private \DateTime $updatedAt;
 
     public function getId(): ?int
     {
