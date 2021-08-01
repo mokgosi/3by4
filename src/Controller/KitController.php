@@ -79,4 +79,15 @@ class KitController extends AbstractController
 
         return $this->redirectToRoute('kit_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    #[Route('/country-kits', name: 'country_kits', options: ['expose'=>true],methods: ['GET'])]
+    public function getCountryKits(Request $request): Response
+    {
+        $kits = $this->getDoctrine()
+            ->getRepository(Kit::class)
+            ->getCountryKits($request->countryId);
+
+        dump($kits);
+        die;
+    }
 }

@@ -122,6 +122,10 @@ class Kit
         return $this->orders;
     }
 
+    public function getCountryKits()
+    {
+        return $this->countryKits;
+    }
 //    /**
 //     * @param Order $order
 //     * @return $this

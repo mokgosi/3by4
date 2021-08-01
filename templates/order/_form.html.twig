@@ -5,10 +5,12 @@
     {{ form_row(form.country) }}
     {{ form_row(form.kit) }}
 
+    {{ form_row(form.patient.email, {'id': 'autoComplete'}) }}
     {{ form_row(form.patient.firstName) }}
     {{ form_row(form.patient.lastName) }}
-    {{ form_row(form.patient.email) }}
 
     {{ form_row(form.paid) }}
 
 {{ form_end(form) }}
+
+

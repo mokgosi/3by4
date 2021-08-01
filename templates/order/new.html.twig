@@ -9,3 +9,7 @@
 
 {#    <a href="{{ path('order_index') }}">back to list</a>#}
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/patient-autocomplete.js') }}" ></script>
+{% endblock %}

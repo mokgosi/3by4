@@ -79,4 +79,14 @@ class PatientController extends AbstractController
 
         return $this->redirectToRoute('patient_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    #[Route('/search-patient', name: 'patient_search', methods: ['GET'])]
+    public function searchPatient(Request $request, Patient $patient): Response
+    {
+        $patient = $this->getDoctrine()
+            ->getRepository(Patient::class)
+            ->findByField();
+
+        return JsonResponse(['no result found.']);
+    }
 }

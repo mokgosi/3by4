@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa3583e5-4357-41ed-8bff-21fa3ef731f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/CountryKit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/create-order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210731073021.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/CountryFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/CountryFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/KitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/KitController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Dto/OrderDTO.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Dto/OrderDTO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Dto/PatientDTO.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Dto/PatientDTO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Kit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Kit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/OrderType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OrderType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/order/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -182,12 +188,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Repository" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/build" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\3by4\public\build" />
       <recent name="C:\xampp\htdocs\3by4\src\Repository" />
       <recent name="C:\xampp\htdocs\3by4\templates\country" />
     </key>
@@ -214,7 +221,7 @@
       <workItem from="1627638812597" duration="12189000" />
       <workItem from="1627682585596" duration="29238000" />
       <workItem from="1627714733869" duration="802000" />
-      <workItem from="1627716998092" duration="20544000" />
+      <workItem from="1627716998092" duration="50300000" />
     </task>
     <servers />
   </component>
