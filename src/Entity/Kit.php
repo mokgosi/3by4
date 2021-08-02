@@ -30,11 +30,6 @@ class Kit
     private $description;
 
     /**
-     * @ORM\Column(type="float")
-     */
-    private $price;
-
-    /**
      * @ORM\OneToMany(targetEntity=Order::class, mappedBy="kit")
      */
     private $orders;

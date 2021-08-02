@@ -13,23 +13,21 @@ class OrderDTO implements GroupSequenceProviderInterface
      * @Assert\Type(type="App\Entity\Country")
      * @Assert\Valid
      */
-    private $country;
+    public $country;
 
     /**
      * @Assert\NotBlank(message="Kit is required.")
      * @Assert\Type(type="App\Entity\Kit")
      * @Assert\Valid
      */
-    public object $kit;
+    public $kit;
 
     /**
-     * @Assert\NotBlank
-     * @Assert\Type(type="App\Entity\Patient")
      * @Assert\Valid
      */
-    public object $patient;
+    public $patient;
 
-    public bool $paid;
+    public bool $paid = false;
 
     public function __construct()
     {
@@ -42,6 +40,30 @@ class OrderDTO implements GroupSequenceProviderInterface
     public function getCountry()
     {
         return $this->country;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKit()
+    {
+        return $this->kit;
+    }
+
+     /**
+     * @return mixed
+     */
+    public function getPaid()
+    {
+        return $this->paid;
     }
 
     /**

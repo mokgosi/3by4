@@ -2,6 +2,16 @@
 
 {% block title %}New Order{% endblock %}
 
+{% block stylesheets %} 
+    {{ parent() }}
+
+    <style>
+    span.twitter-typeahead {
+        display: flex !important;
+    }
+    </style>
+{% endblock %}
+
 {% block body %}
     <h1>Create new Order</h1>
 
@@ -11,5 +21,8 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+    <script>
+        const remoteRoute = "{{ path('patient_filter')|escape('js') }}";
+    </script>
     <script src="{{ asset('build/patient-autocomplete.js') }}" ></script>
 {% endblock %}

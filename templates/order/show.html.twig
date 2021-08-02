@@ -8,20 +8,24 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Test Kit</th>
-                <td>{{ order.kit.name }}</td>
+                <th>Order No.</th>
+                <td>000000000{{ order.id }}</td>
             </tr>
             <tr>
-                <th>Patient Name</th>
-                <td>{{ order.patient.firstName }} {{ order.patient.lastName }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ order.patient.email }}</td>
+                <th>Product</th>
+                <td>{{ order.kitname }}</td>
             </tr>
             <tr>
                 <th>Price</th>
-                <td>{{ order.country.currency }} {{ order.kit.price }}</td>
+                <td>{{ order.currency }} {{ order.price }}</td>
+            </tr>
+            <tr>
+                <th>Patient Name</th>
+                <td>{{ order.firstName }} {{ order.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ order.email }}</td>
             </tr>
             <tr>
                 <th>Paid</th>
@@ -30,7 +34,7 @@
             <tr>
                 <th>Date ordered</th>
                 <td>{{ order.createdAt ? order.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
+            </tr> 
         </tbody>
     </table>
 

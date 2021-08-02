@@ -21,6 +21,7 @@ class CountryKitFixtures extends Fixture implements DependentFixtureInterface
         $kit1->setCountry($this->getReference(CountryFixtures::COUNTRY1_REFERENCE));
         $kit1->setKit($this->getReference(KitFixtures::KIT_REFERENCE));
         $kit1->setPrice(200.00);
+        
         $manager->persist($kit1);
 
         $manager->flush();

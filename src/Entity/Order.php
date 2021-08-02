@@ -28,7 +28,7 @@ class Order
      * @ORM\ManyToOne(targetEntity=Kit::class, inversedBy="orders")
      * @ORM\JoinColumn(nullable=false)
      */
-    private object $kit;
+    private $kit;
 
     /**
      * @ORM\ManyToOne(targetEntity=Patient::class, inversedBy="orders")

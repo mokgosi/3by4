@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\SerializerInterface;
 
 #[Route('/patient')]
 class PatientController extends AbstractController
@@ -40,6 +42,16 @@ class PatientController extends AbstractController
             'patient' => $patient,
             'form' => $form,
         ]);
+    }
+
+    #[Route('/patient-filter', name: 'patient_filter', methods: ['GET','POST'])]
+    public function searchPatient(PatientRepository $patientRepository, SerializerInterface $serializer): Response
+    {
+        $patients = $patientRepository->findAll();
+
+        $data = $serializer->serialize($patients, 'json', ['groups' => "general"]);
+
+        return new Response($data);
     }
 
     #[Route('/{id}', name: 'patient_show', methods: ['GET'])]
@@ -80,13 +92,5 @@ class PatientController extends AbstractController
         return $this->redirectToRoute('patient_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    #[Route('/search-patient', name: 'patient_search', methods: ['GET'])]
-    public function searchPatient(Request $request, Patient $patient): Response
-    {
-        $patient = $this->getDoctrine()
-            ->getRepository(Patient::class)
-            ->findByField();
-
-        return JsonResponse(['no result found.']);
-    }
+    
 }
